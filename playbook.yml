@@ -1,0 +1,12 @@
+---
+- name: Script demo
+  hosts: all
+
+  tasks:
+    - name: Run a script with arguments (free form)
+      register: _script_result
+      ansible.builtin.script: |
+        ./files/hello.sh
+    - name: Display _script_result
+      ansible.builtin.debug:
+        msg: "{{ _script_result.stdout_lines }}"
