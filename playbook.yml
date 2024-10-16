@@ -10,3 +10,6 @@
     - name: Display _script_result
       ansible.builtin.debug:
         msg: "{{ _script_result.stdout_lines }}"
+    - name: Display username
+      ansible.builtin.debug:
+        msg: "我的名字是 {{ username }}"
